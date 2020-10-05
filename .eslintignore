@@ -1,0 +1,10 @@
+.expo
+.next
+public
+.pnp
+build
+dist
+coverage
+web-build
+web-report
+out

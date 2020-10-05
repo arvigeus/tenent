@@ -1,0 +1,100 @@
+{
+  "name": "tenent",
+  "private": true,
+  "description": "NextJs example using permissive config",
+  "license": "MIT",
+  "author": "Kataware <contact@kataware.dev>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/arvigeus/tenent.git"
+  },
+  "bugs": {
+    "url": "https://github.com/arvigeus/tenent/issues"
+  },
+  "version": "1.0.0",
+  "engines": {
+    "node": ">=12.18.0"
+  },
+  "scripts": {
+    "dev": "next",
+    "debug": "node --inspect ./node_modules/next/dist/bin/next",
+    "build": "next build",
+    "export": "next export",
+    "analyze": "cross-env ANALYZE=true next build",
+    "start": "next start",
+    "profile": "run-s 'build -- --profile' start",
+    "docker:build": "docker build -t permissive-next-app .",
+    "docker:run": "docker run --rm -it -p 3000:3000 permissive-next-app",
+    "lint:type": "tsc",
+    "lint:code": "eslint --fix .",
+    "lint:style": "stylelint '**/*.{css,js,jsx,tsx}'",
+    "lint:markdown": "markdownlint --fix '**/*.md'",
+    "lint": "run-s -c lint:type lint:code lint:style lint:markdown",
+    "format": "prettier --loglevel silent --write .",
+    "test:coverage": "jest --coverage",
+    "test:code": "jest",
+    "test:e2e": "start-test dev 3000 'TZ=UTC cypress run'",
+    "test": "run-s -c test:code test:e2e",
+    "e2e": "start-test dev 3000 'TZ=UTC cypress open'"
+  },
+  "dependencies": {
+    "next": "latest",
+    "next-seo": "^4.10.0",
+    "react": "17.0.0-rc.2",
+    "react-dom": "17.0.0-rc.2",
+    "react-error-boundary": "^3.0.2"
+  },
+  "devDependencies": {
+    "@47ng/check-env": "^2.0.1",
+    "@babel/core": "^7.11.6",
+    "@commitlint/cli": "^11.0.0",
+    "@cypress/browserify-preprocessor": "^3.0.1",
+    "@next/bundle-analyzer": "^9.5.3",
+    "@testing-library/cypress": "^7.0.1",
+    "@testing-library/react": "^11.0.4",
+    "@types/axe-core": "^2.0.7",
+    "@types/cypress-axe": "^0.8.0",
+    "@types/jest": "^26.0.14",
+    "@types/node": "^14.11.2",
+    "@types/react": "^16.9.49",
+    "@types/react-dom": "^16.9.8",
+    "@types/testing-library__cypress": "^5.0.8",
+    "babel-eslint": "^10.1.0",
+    "babel-jest": "^26.3.0",
+    "babel-loader": "^8.1.0",
+    "babel-preset-permissive": "latest",
+    "browserslist-config-permissive": "latest",
+    "cross-env": "^7.0.2",
+    "cypress": "^5.2.0",
+    "cypress-axe": "^0.8.1",
+    "eslint": "^7.9.0",
+    "eslint-config-permissive": "latest",
+    "git-config-permissive": "latest",
+    "husky": "^4.3.0",
+    "jest": "^26.4.2",
+    "jest-preset-permissive": "latest",
+    "lint-staged": "^10.4.0",
+    "markdownlint": "^0.21.0",
+    "markdownlint-cli": "^0.23.2",
+    "markdownlint-config-permissive": "latest",
+    "next-compose-plugins": "^2.2.0",
+    "next-pwa": "^3.1.4",
+    "next-svgr": "^0.0.2",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^7.0.32",
+    "postcss-preset-permissive": "latest",
+    "prettier": "^2.1.2",
+    "start-server-and-test": "^1.11.4",
+    "stylelint": "^13.7.2",
+    "stylelint-config-permissive": "latest",
+    "ts-node": "^9.0.0",
+    "tslib": "^2.0.1",
+    "typescript": "4.1.0-beta",
+    "typescript-config-permissive": "latest"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  }
+}

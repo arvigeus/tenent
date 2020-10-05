@@ -1,0 +1,12 @@
+node_modules
+.expo
+.next
+public
+.pnp
+build
+dist
+coverage
+package-lock.json
+web-build
+web-report
+out

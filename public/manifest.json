@@ -1,0 +1,32 @@
+{
+  "theme_color": "#000",
+  "background_color": "#e5e5e5",
+  "display": "browser",
+  "scope": "/",
+  "start_url": "/",
+  "app_name": "tetent",
+  "short_name": "tenent",
+  "description": "Create, don't overthink",
+  "icons": [
+    {
+      "src": "/images/icon-192x192.png",
+      "sizes": "192x",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/icon-256x256.png",
+      "sizes": "256x",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/icon-384x384.png",
+      "sizes": "384x",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/icon-512x512.png",
+      "sizes": "512x",
+      "type": "image/png"
+    }
+  ]
+}

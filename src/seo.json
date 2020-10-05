@@ -1,0 +1,31 @@
+{
+  "title": "tenent",
+  "titleTemplate": "%s | tenent",
+  "description": "Create, don't overthink",
+  "additionalMetaTags": [
+    { "property": "author", "content": "kataware" },
+    {
+      "property": "keywords",
+      "content": ""
+    }
+  ],
+  "twitter": {
+    "cardType": "summary",
+    "handle": "arvigeus",
+    "site": "arvigeus"
+  },
+  "openGraph": {
+    "type": "website",
+    "site_name": "arvigeus",
+    "profile": {
+      "firstName": "arvigeus"
+    },
+    "images": [
+      {
+        "url": "/images/og-cover.jpg",
+        "width": 1280,
+        "height": 720
+      }
+    ]
+  }
+}

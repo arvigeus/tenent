@@ -1,0 +1,17 @@
+{
+  "extends": "typescript-config-permissive",
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "compilerOptions": {
+    "strict": false,
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "baseUrl": "src",
+    "paths": {
+      "react-testing-library": ["./utils/react-testing-library"],
+      "logger": ["./utils/logger"]
+    },
+    "tsBuildInfoFile": ".tsbuildinfo"
+  },
+  "exclude": ["node_modules", "cypress"]
+}

@@ -1,0 +1,9 @@
+{
+  "extends": ["permissive", "permissive/nextjs"],
+  "settings": {
+    "react": {
+      "version": "detect"
+    },
+    "import/core-modules": ["react-testing-library", "logger"]
+  }
+}

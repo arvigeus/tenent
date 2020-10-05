@@ -1,0 +1,55 @@
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# Debug
+npm-debug.*
+yarn-debug.log*
+yarn-error.log*
+
+# local env files
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Typescript
+.tsbuildinfo
+tsconfig.tsbuildinfo
+
+# OS specific
+.DS_Store
+desktop.ini
+*.pem
+
+# Expo
+/.expo/*
+# Expo Web
+/web-build/*
+/web-report/*
+# Expo Native
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+*.orig.*
+
+# Next.js
+/.next/*
+/out/
+.vercel
+
+# Production
+/dist/
+/build/
+
+# PWA
+/public/sw.js*
+/public/workbox-*
+
+# Testing
+coverage
+/cypress/screenshots/
+/cypress/videos/

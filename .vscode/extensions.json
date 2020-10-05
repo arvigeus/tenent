@@ -1,0 +1,14 @@
+{
+  "recommendations": [
+    "msjsdiag.debugger-for-chrome",
+    "dbaeumer.vscode-eslint",
+    "orta.vscode-jest",
+    "stylelint.vscode-stylelint",
+    "csstools.postcss",
+    "esbenp.prettier-vscode",
+    "davidanson.vscode-markdownlint",
+    "editorconfig.editorconfig",
+    "knisterpeter.vscode-commitizen",
+    "ms-azuretools.vscode-docker"
+  ]
+}
