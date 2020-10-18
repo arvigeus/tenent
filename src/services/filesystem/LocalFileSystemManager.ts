@@ -137,3 +137,5 @@ export const createLocalFileSystemManager = async (): Promise<
   if (handle == null) throw new Error("Unable to obtain project handle");
   return new LocalFileSystemService(handle);
 };
+
+export const isSupported = Boolean(globalThis.showDirectoryPicker);
