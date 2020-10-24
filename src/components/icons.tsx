@@ -22,6 +22,7 @@ import {
   VscNewFile,
   VscNewFolder,
   VscInfo,
+  VscGithubAlt,
 } from "react-icons/vsc";
 
 import { ImFileVideo, ImFileZip } from "react-icons/im";
@@ -112,6 +113,10 @@ export const Jest = (props: IconProps) => <Box {...props} as={SiJest} />;
 
 export const Prettier = (props: IconProps) => (
   <Box {...props} as={SiPrettier} />
+);
+
+export const Github = (props: IconProps) => (
+  <Box {...props} as={VscGithubAlt} />
 );
 
 export const Babel = (props: IconProps) => <Box {...props} as={SiBabel} />;
