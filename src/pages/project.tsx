@@ -34,7 +34,7 @@ export default function Project() {
                 hoverBgColor="blue.500"
                 icon={FolderOpen}
                 heading="Local project"
-                description="Load project from your local filesystem"
+                description="Load project from your device"
               />
               <ProjectButton
                 onClick={onGithubInit}
