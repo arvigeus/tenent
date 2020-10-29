@@ -20,11 +20,13 @@ export default function Setup() {
   }, [router]);
 
   return (
-    <Box backgroundColor="gray.100" minHeight="100vh">
+    <Box backgroundColor="dark.800" color="dark.300" minHeight="100vh">
       <Flex direction="column" height="100%">
         <Box height="100px" />
         <Box flexGrow={1} flexDirection="column" alignSelf="center">
-          <Heading textAlign="center">Welcome to Tenet!</Heading>
+          <Heading textAlign="center" color="dark.200">
+            Welcome to Tenet!
+          </Heading>
           <Text lineHeight={3} textAlign="center">
             Please select from where to load your project:
           </Text>
@@ -42,18 +44,18 @@ export default function Setup() {
             <LageButton
               onClick={onGithubInit}
               color="gray.100"
-              bgColor="gray.900"
+              bgColor="gray.700"
               hoverColor="gray.50"
-              hoverBgColor="gray.700"
+              hoverBgColor="gray.600"
               icon={Github}
               heading="Github repository"
               description="Load project from a remote git repository"
             />
           </VStack>
           <Flex direction="row" alignItems="center" my="20px">
-            <Divider flexGrow={1} borderTop="1px solid black" />
+            <Divider flexGrow={1} borderTop="1px solid white" />
             <Text px="5px">OR</Text>
-            <Divider flexGrow={1} borderTop="1px solid black" />
+            <Divider flexGrow={1} borderTop="1px solid white" />
           </Flex>
           <LageButton
             onClick={onBlankInit}
