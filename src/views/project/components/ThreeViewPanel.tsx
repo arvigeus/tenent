@@ -25,7 +25,12 @@ export default function ThreeViewPanel({
   );
   return (
     <Flex width="100vw" height="100vh" direction="row">
-      <Box backgroundColor="gray.700" flex="0 0 48px" height="100%">
+      <Box
+        backgroundColor="dark.600"
+        flex="0 0 48px"
+        height="100%"
+        width="100%"
+      >
         <VStack spacing="10px" paddingTop="10px">
           {navigation.map(({ name, path, icon }) => (
             <IconLink
@@ -40,11 +45,13 @@ export default function ThreeViewPanel({
         </VStack>
       </Box>
       {isShown && (
-        <Scrollable backgroundColor="gray.800" flex="0 0 340px" height="100%">
+        <Scrollable backgroundColor="dark.700" flex="0 0 340px" height="100%">
           {sidePanel}
         </Scrollable>
       )}
-      <Box flexBasis="100%">{children}</Box>
+      <Box flex="1 1 auto" overflow="auto">
+        {children}
+      </Box>
     </Flex>
   );
 }
@@ -63,13 +70,13 @@ const IconLink = ({ label, href, icon, isActive, onClick }: IconLinkProps) => {
     <Tooltip label={label} aria-label={label}>
       <IconButton
         variant="ghost"
-        color="gray.500"
+        color={isActive ? "white" : "dark.400"}
         aria-label={label}
-        fontSize="32px"
+        fontSize="28px"
         justifyContent="center"
         borderRadius="none"
-        boxShadow={isActive ? "-4px 0 white" : "none"}
-        _hover={{ background: "none", color: "gray.400" }}
+        boxShadow={isActive ? "-2px 0 white" : "none"}
+        _hover={{ background: "none", color: isActive ? "white" : "dark.100" }}
         _active={{ background: "none" }}
         _focus={{ outline: "none" }}
         icon={icon}

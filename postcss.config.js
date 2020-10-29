@@ -1,3 +1,3 @@
 module.exports = {
-  plugins: ["stylelint", "postcss-preset-permissive"],
+  plugins: [require("stylelint"), require("postcss-preset-permissive")],
 };
