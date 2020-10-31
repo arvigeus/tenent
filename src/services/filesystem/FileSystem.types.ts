@@ -1,3 +1,9 @@
+export enum ProviderName {
+  Local = "local",
+  Github = "github",
+  New = "new",
+}
+
 export interface FileSystemItem {
   name: string;
   type: "file" | "directory";

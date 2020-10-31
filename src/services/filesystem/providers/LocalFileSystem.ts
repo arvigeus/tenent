@@ -1,4 +1,4 @@
-import { FileSystemService, FileSystemItem } from "./FileSystem.types";
+import { FileSystemService, FileSystemItem } from "../FileSystem.types";
 import { sanitizePath, getDirectoryAndFileName, join } from "utils/path";
 
 /**
@@ -6,7 +6,7 @@ import { sanitizePath, getDirectoryAndFileName, join } from "utils/path";
  * Everything else like handling node_modules, absolute paths, .. directives should be separate logic
  * @see https://web.dev/file-system-access/
  */
-class LocalFileSystemService implements FileSystemService {
+class LocalFileSystemProvider implements FileSystemService {
   private readonly _handles = {};
 
   constructor(handle) {
@@ -130,12 +130,12 @@ class LocalFileSystemService implements FileSystemService {
   }
 }
 
-export const createLocalFileSystemManager = async (): Promise<
+export const createLocalFileSystemProvider = async (): Promise<
   FileSystemService
 > => {
   const handle = await globalThis.showDirectoryPicker();
   if (handle == null) throw new Error("Unable to obtain project handle");
-  return new LocalFileSystemService(handle);
+  return new LocalFileSystemProvider(handle);
 };
 
 export const isSupported = Boolean(globalThis.showDirectoryPicker);

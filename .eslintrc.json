@@ -4,6 +4,14 @@
     "react": {
       "version": "detect"
     },
-    "import/core-modules": ["react-testing-library", "logger"]
+    "import/core-modules": ["react-testing-library", "logger"],
+    "rules": {
+      "react-hooks/exhaustive-deps": [
+        "warn",
+        {
+          "additionalHooks": "useLoadFileSystemCallback"
+        }
+      ]
+    }
   }
 }
