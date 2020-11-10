@@ -1,4 +1,4 @@
-import ThreeViewPanel from "views/project/components/ThreeViewPanel";
+import ThreeViewPanel from "layouts/ThreeViewPanel";
 
 export default function Designer() {
   return <ThreeViewPanel sidePanel="designer">designer</ThreeViewPanel>;

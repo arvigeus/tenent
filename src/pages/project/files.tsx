@@ -1,10 +1,12 @@
-import CodeEditor from "components/CodeEditor";
-import ThreeViewPanel from "views/project/components/ThreeViewPanel";
+import dynamic from "next/dynamic";
+import { useRequireFs } from "hooks";
 
-export default function Files() {
-  return (
-    <ThreeViewPanel sidePanel="files">
-      <CodeEditor />
-    </ThreeViewPanel>
-  );
+const FileManager = dynamic(() => import("features/FileManager/Page"), {
+  ssr: false,
+});
+
+export default function ProjectFiles() {
+  const page = useRequireFs(<FileManager />, { redirectTo: "/project/" });
+
+  return page;
 }

@@ -10,7 +10,7 @@ export interface FileSystemItem {
 }
 
 export interface FileSystemService {
-  readFile: (path: string) => Promise<void>;
+  readFile: (path: string) => Promise<string>;
   writeFile: (path: string, contents: string) => Promise<void>;
   listDirectory: (path?: string) => Promise<FileSystemItem[]>;
   createDirectory: (path: string) => Promise<void>;

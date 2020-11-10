@@ -6,29 +6,36 @@ import { sanitizePath, getDirectoryAndFileName, join } from "utils/path";
  * Everything else like handling node_modules, absolute paths, .. directives should be separate logic
  * @see https://web.dev/file-system-access/
  */
-class LocalFileSystemProvider implements FileSystemService {
-  private readonly _handles = {};
 
-  constructor(handle) {
-    this._handles["/"] = handle;
+// Store extracted nodes for faster lookups
+// It has to be outside the class because it is made immutable by recoil
+let _cache = {};
+
+class LocalFileSystemProvider implements FileSystemService {
+  private readonly _root;
+
+  constructor(root) {
+    this._root = root;
+    _cache["/"] = root;
   }
 
   private async getHandle(
     path: string,
     { type, create }: { type?: "file" | "directory"; create?: boolean } = {}
   ) {
-    let handle = this._handles[sanitizePath(path)];
+    let handle = _cache[sanitizePath(path)];
     if (handle) return handle;
 
-    handle = this._handles["/"];
+    handle = this._root;
     const [parent, target] = getDirectoryAndFileName(path);
     const entries = parent.split("/");
     const length = entries.length - 1;
     let local = "";
+    const handles = {};
     for (let i = 1; i < length; i++) {
       handle = await handle.getDirectoryHandle(entries[i], { create });
       local += `/${entries[i]}`;
-      this._handles[local] = handle;
+      handles[local] = handle;
     }
 
     switch (type) {
@@ -43,7 +50,9 @@ class LocalFileSystemProvider implements FileSystemService {
     }
 
     local += `/${target}`;
-    this._handles[local] = handle;
+    handles[local] = handle;
+    // eslint-disable-next-line require-atomic-updates
+    _cache = { ..._cache, ...handles };
     return handle;
   }
 
@@ -65,10 +74,12 @@ class LocalFileSystemProvider implements FileSystemService {
     const handle = await this.getHandle(path, { type: "directory" });
 
     const results: FileSystemItem[] = [];
+    const handles = {};
     for await (const entry of handle.values()) {
-      this._handles[join(path, entry.name)] = entry;
+      handles[join(path, entry.name)] = entry;
       results.push({ name: entry.name, type: entry.kind });
     }
+    _cache = { ..._cache, ...handles };
 
     return results;
   }
@@ -89,7 +100,7 @@ class LocalFileSystemProvider implements FileSystemService {
       const handle = await this.getHandle(parent, { type: "directory" });
       await handle.removeEntry(target, { recursive: true });
       // eslint-disable-next-line @typescript-eslint/no-dynamic-delete
-      delete this._handles[join(parent, target)];
+      delete _cache[join(parent, target)];
     } catch (e: unknown) {}
   }
 

@@ -16,3 +16,6 @@ export const join = (...params: string[]): string =>
     .join("/")
     .replace(/(\/)\1+/g, "/") // Remove duplicates
     .replace(/\/$/, ""); // Remove trailing /
+
+export const extension = (path: string) =>
+  path.substring(path.lastIndexOf(".") + 1).toLowerCase();

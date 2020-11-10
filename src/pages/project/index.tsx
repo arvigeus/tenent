@@ -15,7 +15,7 @@ export default function Project() {
 
   const setFileSystemService = useLoadFileSystemCallback(
     (error) => {
-      if (!error) router.push("/project/entities");
+      if (!error) router.push("/project/files");
     },
     [router]
   );

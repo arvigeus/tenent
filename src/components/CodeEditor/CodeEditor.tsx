@@ -1,17 +1,15 @@
 import { useCallback, useMemo, useState, useRef, useEffect } from "react";
-import dynamic from "next/dynamic";
-import { MonacoEditorProps, MonacoDiffEditorProps } from "react-monaco-editor";
-import { Box, Text } from "@chakra-ui/core";
+import MonacoEditor, {
+  MonacoDiffEditor,
+  MonacoEditorProps,
+  MonacoDiffEditorProps,
+} from "react-monaco-editor";
+import { Box } from "@chakra-ui/core";
 
 import { getWorkerUrl } from "./CodeEditor.helpers";
 
-const MonacoEditor = dynamic(import("react-monaco-editor"), { ssr: false });
-const MonacoDiffEditor = dynamic<MonacoDiffEditorProps>(
-  import("react-monaco-editor").then((mod) => mod.MonacoDiffEditor),
-  { ssr: false }
-);
-
 const CodeEditor = ({
+  value,
   width = "100%",
   height = "100%",
   theme = "vs-dark",
@@ -29,6 +27,7 @@ const CodeEditor = ({
   );
 
   const ref = useRef();
+  console.log(language);
 
   const isDynamic = useMemo(
     () => width.toString().endsWith("%") || height.toString().endsWith("%"),
@@ -43,7 +42,6 @@ const CodeEditor = ({
     // @ts-expect-error
     const resizeObserver = new ResizeObserver((entries) => {
       const { width, height } = entries[0].contentRect;
-      console.info(width, height);
       setDimensions({ width, height });
     });
 
@@ -58,14 +56,17 @@ const CodeEditor = ({
       backgroundColor="#1e1e1e"
       overflow="hidden"
     >
-      <MonacoEditor
-        theme={theme}
-        language={language}
-        width={dimensions.width}
-        height={dimensions.height}
-        editorDidMount={onMount}
-        {...props}
-      />
+      {value != null ? (
+        <MonacoEditor
+          theme={theme}
+          language={language}
+          width={dimensions.width}
+          height={dimensions.height}
+          editorDidMount={onMount}
+          value={value}
+          {...props}
+        />
+      ) : null}
     </Box>
   );
 };

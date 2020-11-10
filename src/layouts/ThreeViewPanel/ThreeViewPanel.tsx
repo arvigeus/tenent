@@ -2,7 +2,7 @@ import { useCallback, useState, ComponentType, ReactNode } from "react";
 import { Flex, Box, IconButton, Tooltip } from "@chakra-ui/core";
 import { VStack } from "@chakra-ui/layout";
 import { useRouter } from "next/router";
-import navigation from "../utils/navigation";
+import navigation from "./navigation";
 import Scrollable from "components/Scrollable";
 
 interface ThreeViewPanelProps {
