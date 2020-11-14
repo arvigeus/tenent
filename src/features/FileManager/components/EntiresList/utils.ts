@@ -1,9 +1,9 @@
-import { ButtonProps } from "@chakra-ui/core";
+import { ButtonProps } from "@chakra-ui/react";
 import { extension } from "utils/path";
 import * as icons from "components/icons";
 
 export const fileProps: Partial<ButtonProps> = {
-  variantColor: "transparent",
+  colorScheme: "transparent",
   size: "xs",
   color: "gray.300",
   fontWeight: "normal",

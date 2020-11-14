@@ -1,5 +1,5 @@
 import { useCallback, useState, Suspense } from "react";
-import { Collapse, Flex, Button, Text, Box } from "@chakra-ui/core";
+import { Collapse, Flex, Button, Text, Box } from "@chakra-ui/react";
 import { fileProps, shouldIgnore, getFileIcon } from "./utils";
 import { useReadDirectory, useOpenFile } from "services/filesystem";
 import { join } from "utils/path";
@@ -51,15 +51,17 @@ const Directory = ({ parent, name, fullName }) => {
     <>
       <Flex direction="row">
         <Button onClick={setOpenHandler} aria-label="directory" {...fileProps}>
-          <Icon size="16px" mr="5px" />
+          <Icon width="16px" height="16px" mr="5px" />
           {name}
         </Button>
       </Flex>
 
       <Suspense fallback={null}>
-        <Collapse ml={1} isOpen={isOpen}>
-          {isOpen && <DirectoryList path={fullName} />}
-        </Collapse>
+        <Box ml={1}>
+          <Collapse in={isOpen}>
+            {isOpen && <DirectoryList path={fullName} />}
+          </Collapse>
+        </Box>
       </Suspense>
     </>
   );
@@ -76,7 +78,7 @@ const File = ({ parent, name, fullName }) => {
   return (
     <Flex direction="row">
       <Button onClick={onFileSelected} aria-label="file" {...fileProps}>
-        <Icon size="16px" mr="5px" />
+        <Icon width="16px" height="16px" mr="5px" />
         {name}
       </Button>
     </Flex>

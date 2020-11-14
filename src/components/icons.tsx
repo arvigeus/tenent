@@ -1,4 +1,4 @@
-import { Box, IconProps } from "@chakra-ui/core";
+import { Icon, IconProps } from "@chakra-ui/react";
 import {
   DiReact,
   DiCss3,
@@ -39,90 +39,94 @@ import {
 
 import { GrLicense } from "react-icons/gr";
 
-export const File = (props: IconProps) => <Box {...props} as={VscFile} />;
+export const File = (props: IconProps) => <Icon {...props} as={VscFile} />;
 
-export const FileReact = (props: IconProps) => <Box {...props} as={DiReact} />;
+export const FileReact = (props: IconProps) => <Icon {...props} as={DiReact} />;
 
-export const FileCss = (props: IconProps) => <Box {...props} as={DiCss3} />;
+export const FileCss = (props: IconProps) => <Icon {...props} as={DiCss3} />;
 
 export const FileJs = (props: IconProps) => (
-  <Box {...props} as={DiJavascript} />
+  <Icon {...props} as={DiJavascript} />
 );
 
-export const FileJson = (props: IconProps) => <Box {...props} as={VscJson} />;
+export const FileJson = (props: IconProps) => <Icon {...props} as={VscJson} />;
 
-export const FileHtml = (props: IconProps) => <Box {...props} as={DiHtml5} />;
+export const FileHtml = (props: IconProps) => <Icon {...props} as={DiHtml5} />;
 
 export const FileMarkdown = (props: IconProps) => (
-  <Box {...props} as={VscMarkdown} />
+  <Icon {...props} as={VscMarkdown} />
 );
 
 export const FileGraphql = (props: IconProps) => (
-  <Box {...props} as={SiGraphql} />
+  <Icon {...props} as={SiGraphql} />
 );
 
 export const FileCode = (props: IconProps) => (
-  <Box {...props} as={VscFileCode} />
+  <Icon {...props} as={VscFileCode} />
 );
 
 export const FileWasm = (props: IconProps) => (
-  <Box {...props} as={SiWebassembly} />
+  <Icon {...props} as={SiWebassembly} />
 );
 
 export const FileImage = (props: IconProps) => (
-  <Box {...props} as={VscFileMedia} />
+  <Icon {...props} as={VscFileMedia} />
 );
 
 export const FileVideo = (props: IconProps) => (
-  <Box {...props} as={ImFileVideo} />
+  <Icon {...props} as={ImFileVideo} />
 );
 
-export const FilePdf = (props: IconProps) => <Box {...props} as={VscFilePdf} />;
+export const FilePdf = (props: IconProps) => (
+  <Icon {...props} as={VscFilePdf} />
+);
 
 export const FileArchive = (props: IconProps) => (
-  <Box {...props} as={ImFileZip} />
+  <Icon {...props} as={ImFileZip} />
 );
 
-export const Folder = (props: IconProps) => <Box {...props} as={VscFolder} />;
+export const Folder = (props: IconProps) => <Icon {...props} as={VscFolder} />;
 
 export const FolderOpen = (props: IconProps) => (
-  <Box {...props} as={VscFolderOpened} />
+  <Icon {...props} as={VscFolderOpened} />
 );
 
-export const NewFile = (props: IconProps) => <Box {...props} as={VscNewFile} />;
+export const NewFile = (props: IconProps) => (
+  <Icon {...props} as={VscNewFile} />
+);
 
 export const NewFolder = (props: IconProps) => (
-  <Box {...props} as={VscNewFolder} />
+  <Icon {...props} as={VscNewFolder} />
 );
 
 export const Database = (props: IconProps) => (
-  <Box {...props} as={DiDatabase} />
+  <Icon {...props} as={DiDatabase} />
 );
 
 export const GitBranch = (props: IconProps) => (
-  <Box {...props} as={DiGitBranch} />
+  <Icon {...props} as={DiGitBranch} />
 );
 
-export const Git = (props: IconProps) => <Box {...props} as={DiGit} />;
+export const Git = (props: IconProps) => <Icon {...props} as={DiGit} />;
 
-export const Eslint = (props: IconProps) => <Box {...props} as={SiEslint} />;
+export const Eslint = (props: IconProps) => <Icon {...props} as={SiEslint} />;
 
-export const Webpack = (props: IconProps) => <Box {...props} as={SiWebpack} />;
+export const Webpack = (props: IconProps) => <Icon {...props} as={SiWebpack} />;
 
-export const Jest = (props: IconProps) => <Box {...props} as={SiJest} />;
+export const Jest = (props: IconProps) => <Icon {...props} as={SiJest} />;
 
 export const Prettier = (props: IconProps) => (
-  <Box {...props} as={SiPrettier} />
+  <Icon {...props} as={SiPrettier} />
 );
 
 export const Github = (props: IconProps) => (
-  <Box {...props} as={VscGithubAlt} />
+  <Icon {...props} as={VscGithubAlt} />
 );
 
-export const Babel = (props: IconProps) => <Box {...props} as={SiBabel} />;
+export const Babel = (props: IconProps) => <Icon {...props} as={SiBabel} />;
 
-export const Docker = (props: IconProps) => <Box {...props} as={DiDocker} />;
+export const Docker = (props: IconProps) => <Icon {...props} as={DiDocker} />;
 
-export const License = (props: IconProps) => <Box {...props} as={GrLicense} />;
+export const License = (props: IconProps) => <Icon {...props} as={GrLicense} />;
 
-export const Readme = (props: IconProps) => <Box {...props} as={VscInfo} />;
+export const Readme = (props: IconProps) => <Icon {...props} as={VscInfo} />;

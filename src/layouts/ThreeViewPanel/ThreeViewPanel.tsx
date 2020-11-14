@@ -1,6 +1,5 @@
 import { useCallback, useState, ComponentType, ReactNode } from "react";
-import { Flex, Box, IconButton, Tooltip } from "@chakra-ui/core";
-import { VStack } from "@chakra-ui/layout";
+import { Flex, Box, IconButton, Tooltip, VStack } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 import navigation from "./navigation";
 import Scrollable from "components/Scrollable";
@@ -64,7 +63,13 @@ interface IconLinkProps {
   onClick: (item: string) => void;
 }
 
-const IconLink = ({ label, href, icon, isActive, onClick }: IconLinkProps) => {
+const IconLink = ({
+  label,
+  href,
+  icon: Icon,
+  isActive,
+  onClick,
+}: IconLinkProps) => {
   const handleClick = useCallback(() => onClick(href), [href, onClick]);
   return (
     <Tooltip label={label} aria-label={label}>
@@ -79,7 +84,7 @@ const IconLink = ({ label, href, icon, isActive, onClick }: IconLinkProps) => {
         _hover={{ background: "none", color: isActive ? "white" : "dark.100" }}
         _active={{ background: "none" }}
         _focus={{ outline: "none" }}
-        icon={icon}
+        icon={<Icon />}
         onClick={handleClick}
       />
     </Tooltip>

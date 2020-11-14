@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { RecoilRoot } from "recoil";
-import { ThemeProvider, CSSReset, theme } from "@chakra-ui/core";
+import { ChakraProvider, theme } from "@chakra-ui/react";
 
 // import { TranslationProvider } from "my-i18n-lib"
 // import defaultStrings from "i18n/en-x-default"
@@ -8,12 +8,11 @@ import { ThemeProvider, CSSReset, theme } from "@chakra-ui/core";
 const AppWrapper: FC = ({ children }) => {
   return (
     <RecoilRoot>
-      <ThemeProvider theme={customTheme}>
-        <CSSReset />
+      <ChakraProvider theme={customTheme}>
         {/* <TranslationProvider messages={defaultStrings}> */}
         {children}
         {/* </TranslationProvider> */}
-      </ThemeProvider>
+      </ChakraProvider>
     </RecoilRoot>
   );
 };

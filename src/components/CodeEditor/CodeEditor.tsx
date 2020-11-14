@@ -4,7 +4,7 @@ import MonacoEditor, {
   MonacoEditorProps,
   MonacoDiffEditorProps,
 } from "react-monaco-editor";
-import { Box } from "@chakra-ui/core";
+import { Box } from "@chakra-ui/react";
 
 import { getWorkerUrl } from "./CodeEditor.helpers";
 
@@ -27,7 +27,6 @@ const CodeEditor = ({
   );
 
   const ref = useRef();
-  console.log(language);
 
   const isDynamic = useMemo(
     () => width.toString().endsWith("%") || height.toString().endsWith("%"),
@@ -50,6 +49,7 @@ const CodeEditor = ({
 
   return (
     <Box
+      // @ts-expect-error
       ref={ref}
       width="100%"
       height="100%"

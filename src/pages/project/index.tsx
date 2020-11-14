@@ -1,7 +1,15 @@
 import { useCallback, ElementType } from "react";
 import { useRouter } from "next/router";
-import { Button, Text, Box, Flex, Heading, Divider } from "@chakra-ui/core";
-import { Center, VStack } from "@chakra-ui/layout";
+import {
+  Button,
+  Text,
+  Box,
+  Flex,
+  Heading,
+  Divider,
+  Center,
+  VStack,
+} from "@chakra-ui/react";
 import { FolderOpen, Github, File } from "components/icons";
 import {
   useLoadFileSystemCallback,
