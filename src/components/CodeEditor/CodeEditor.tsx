@@ -26,7 +26,7 @@ const CodeEditor = ({
     [editorDidMount]
   );
 
-  const ref = useRef();
+  const ref = useRef<HTMLDivElement>(null);
 
   const isDynamic = useMemo(
     () => width.toString().endsWith("%") || height.toString().endsWith("%"),
@@ -38,7 +38,6 @@ const CodeEditor = ({
   useEffect(() => {
     if (!isDynamic || !ref.current) return;
 
-    // @ts-expect-error
     const resizeObserver = new ResizeObserver((entries) => {
       const { width, height } = entries[0].contentRect;
       setDimensions({ width, height });
@@ -49,7 +48,6 @@ const CodeEditor = ({
 
   return (
     <Box
-      // @ts-expect-error
       ref={ref}
       width="100%"
       height="100%"
