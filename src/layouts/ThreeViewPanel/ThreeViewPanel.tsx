@@ -48,7 +48,7 @@ export default function ThreeViewPanel({
           {sidePanel}
         </Scrollable>
       )}
-      <Box flex="1 1 auto" overflow="auto">
+      <Box flex="1 1 auto" overflow="auto" position="relative">
         {children}
       </Box>
     </Flex>

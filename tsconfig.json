@@ -11,7 +11,8 @@
       "react-testing-library": ["./utils/react-testing-library"],
       "logger": ["./utils/logger"]
     },
-    "tsBuildInfoFile": ".tsbuildinfo"
+    "tsBuildInfoFile": ".tsbuildinfo",
+    "jsx": "preserve"
   },
   "exclude": ["node_modules", "cypress"]
 }

@@ -39,6 +39,7 @@ const CodeEditor = ({
     if (!isDynamic || !ref.current) return;
 
     const resizeObserver = new ResizeObserver((entries) => {
+      if (entries.length === 0 || !entries[0]) return;
       const { width, height } = entries[0].contentRect;
       setDimensions({ width, height });
     });

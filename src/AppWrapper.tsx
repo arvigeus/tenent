@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { RecoilRoot } from "recoil";
-import { ChakraProvider, theme } from "@chakra-ui/react";
+import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 
 // import { TranslationProvider } from "my-i18n-lib"
 // import defaultStrings from "i18n/en-x-default"
@@ -17,10 +17,8 @@ const AppWrapper: FC = ({ children }) => {
   );
 };
 
-const customTheme = {
-  ...theme,
+const customTheme = extendTheme({
   colors: {
-    ...theme.colors,
     dark: {
       100: "#ddd",
       200: "#969199",
@@ -31,6 +29,6 @@ const customTheme = {
       800: "#1e1e1e",
     },
   },
-};
+});
 
 export default AppWrapper;

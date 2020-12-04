@@ -1,43 +1,38 @@
 import { Icon, IconProps } from "@chakra-ui/react";
-import {
-  DiReact,
-  DiCss3,
-  DiJavascript,
-  DiDatabase,
-  DiGitBranch,
-  DiGit,
-  DiHtml5,
-  DiDocker,
-} from "react-icons/di";
+import { DiReact } from "@react-icons/all-files/di/DiReact";
+import { DiCss3 } from "@react-icons/all-files/di/DiCss3";
+import { DiJavascript } from "@react-icons/all-files/di/DiJavascript";
+import { DiDatabase } from "@react-icons/all-files/di/DiDatabase";
+import { DiGitBranch } from "@react-icons/all-files/di/DiGitBranch";
+import { DiGit } from "@react-icons/all-files/di/DiGit";
+import { DiHtml5 } from "@react-icons/all-files/di/DiHtml5";
+import { DiDocker } from "@react-icons/all-files/di/DiDocker";
 
-import {
-  VscFileMedia,
-  VscFilePdf,
-  VscFileCode,
-  VscFile,
-  VscFolder,
-  VscFolderOpened,
-  VscJson,
-  VscMarkdown,
-  VscNewFile,
-  VscNewFolder,
-  VscInfo,
-  VscGithubAlt,
-} from "react-icons/vsc";
+import { VscFileMedia } from "@react-icons/all-files/vsc/VscFileMedia";
+import { VscFilePdf } from "@react-icons/all-files/vsc/VscFilePdf";
+import { VscFileCode } from "@react-icons/all-files/vsc/VscFileCode";
+import { VscFile } from "@react-icons/all-files/vsc/VscFile";
+import { VscFolder } from "@react-icons/all-files/vsc/VscFolder";
+import { VscFolderOpened } from "@react-icons/all-files/vsc/VscFolderOpened";
+import { VscJson } from "@react-icons/all-files/vsc/VscJson";
+import { VscMarkdown } from "@react-icons/all-files/vsc/VscMarkdown";
+import { VscNewFile } from "@react-icons/all-files/vsc/VscNewFile";
+import { VscNewFolder } from "@react-icons/all-files/vsc/VscNewFolder";
+import { VscInfo } from "@react-icons/all-files/vsc/VscInfo";
+import { VscGithubAlt } from "@react-icons/all-files/vsc/VscGithubAlt";
 
-import { ImFileVideo, ImFileZip } from "react-icons/im";
+import { ImFileVideo } from "@react-icons/all-files/im/ImFileVideo";
+import { ImFileZip } from "@react-icons/all-files/im/ImFileZip";
 
-import {
-  SiEslint,
-  SiPrettier,
-  SiBabel,
-  SiWebpack,
-  SiWebassembly,
-  SiGraphql,
-  SiJest,
-} from "react-icons/si";
+import { SiEslint } from "@react-icons/all-files/si/SiEslint";
+import { SiPrettier } from "@react-icons/all-files/si/SiPrettier";
+import { SiBabel } from "@react-icons/all-files/si/SiBabel";
+import { SiWebpack } from "@react-icons/all-files/si/SiWebpack";
+import { SiWebassembly } from "@react-icons/all-files/si/SiWebassembly";
+import { SiGraphql } from "@react-icons/all-files/si/SiGraphql";
+import { SiJest } from "@react-icons/all-files/si/SiJest";
 
-import { GrLicense } from "react-icons/gr";
+import { GrLicense } from "@react-icons/all-files/gr/GrLicense";
 
 export const File = (props: IconProps) => <Icon {...props} as={VscFile} />;
 

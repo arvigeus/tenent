@@ -1,5 +1,7 @@
 import { ComponentType } from "react";
-import { VscFiles, VscSymbolClass, VscSymbolColor } from "react-icons/vsc";
+import { VscFiles } from "@react-icons/all-files/vsc/VscFiles";
+import { VscSymbolClass } from "@react-icons/all-files/vsc/VscSymbolClass";
+import { VscSymbolColor } from "@react-icons/all-files/vsc/VscSymbolColor";
 
 export interface NavigationItem {
   name: string;

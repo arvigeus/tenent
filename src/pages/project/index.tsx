@@ -36,7 +36,7 @@ export default function Project() {
           <Heading textAlign="center" color="dark.200">
             Welcome to Tenent!
           </Heading>
-          <Text lineHeight={3} textAlign="center">
+          <Text lineHeight={9} textAlign="center">
             Please select from where to load your project:
           </Text>
           <VStack spacing="10px">
